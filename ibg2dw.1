@@ -1,0 +1,104 @@
+.\" $Id: ibg2dw.1,v 1.0 2016/03/13 14:51:34 joke Rel $
+.ds ED Edition 1.0
+.ds UP March 2016
+.ds VE 1.0
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.TH IBG2DW 1 "\*(UP\&" "Version \*(VE\&" "USER COMMANDS"
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"     German umlauts
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"     usage: \*(ae\&
+.if t .ds ae ä
+.if n .ds ae ae
+.\"     usage: \*(oe\&
+.if t .ds oe ö
+.if n .ds oe oe
+.\"     usage: \*(ue\&
+.if t .ds ue ü
+.if n .ds ue ue
+.\"     usage: \*(Ae\&
+.if t .ds Ae Ä
+.if n .ds Ae Ae
+.\"     usage: \*(Oe\&
+.if t .ds Oe Ö
+.if n .ds Oe Oe
+.\"     usage: \*(Ue\&
+.if t .ds Ue Ü
+.if n .ds Ue Ue
+.\"     usage: \*(ss\&
+.if t .ds ss ß
+.if n .ds ss ss
+.\"
+.\"     usage: \*(cc\&
+.if t .ds cc ç
+.if n .ds cc ,c
+.\"
+.\" The TeX macros
+.if t .ds Bi B\s-2IB\s+2T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Bi BibTeX
+.\"
+.if t .ds Sc S\s-2CRIBE\s+2
+.if n .ds Sc Scribe
+.\" \(*Sc\&
+.if t .ds Te T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Te TeX
+.\" 
+.if t .ds La L\\h'-0.3334m'\\v'-0.10v'\s-2A\s+2\\v'+0.10v'\\h'-0.1667m'T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds La LaTeX
+.\" 
+.if t .ds Ja J\s-2AVA\s+2
+.if n .ds Ja Java
+.\" 
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.SH NAME
+ibg2dw \- IBM infosphere business glossary to DokuWiki converter
+.\"
+.SH SYNOPSIS
+.I ibg2dw
+.B [-v]
+.I file(s)
+.\"
+.SH DESCRIPTION
+.I ibg2dw
+is a tool for generating
+.I DokuWiki
+from
+.B IBM infosphere business glossary export files.
+.\"
+.SH OPTIONS
+.I ibg2dw
+recognizes the following options:
+.\"
+.TP
+To give no option at all is the same as to give the options
+.\"
+.SH "SEE ALSO"
+.LP
+.BR btoc (1),
+.\"
+.SH AUTHOR
+Copyright 
+.if t \(co 
+.if n (c)
+2016 J\*(oe\&rg Heitk\*(oe\&tter (joke). All rights reserved.
+.nf
+Send bugs, comments, and all the fish to <joke@verizon.com>
+.fi
+.\"
+.SH CREDITS
+.LP
+Thanks for thoughtful comments from
+.\"
+.SH AVAILABILITY
+.I ibg2dw
+is also available on GitHub at
+.B http://github.com/jheitkoetter/ibg2dw.git
+.LP
+This work is protected by the terms of the
+.SM GNU
+General Public License. Please refer to the
+.SM COPYING
+file accompanying the sources of this software package for a lengthy, boring
+but, absolute complete description.
