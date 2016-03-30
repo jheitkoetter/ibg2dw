@@ -29,12 +29,10 @@ CREDITS
        Thanks for thoughtful comments from
 
 AVAILABILITY
-       ibg2dw is also  available  on  GitHub  at  http://github.com/jheitkoet-
-       ter/ibg2dw/
+       ibg2dw is on GitHub at http://github.com/jheitkoetter/ibg2dw.git
 
-       This  work is protected by the terms of the GNU General Public License.
+       This work is protected by the terms of the GNU General Public  License.
        Please refer to the COPYING file accompanying the sources of this soft-
        ware package for a lengthy, boring but, absolute complete description.
 
 Version 1.0                       March 2016                         IBG2DW(1)
-# ibg2dw
