@@ -82,20 +82,26 @@ csv2dw (fp, file)
      FILE *fp;
      char *file;
 {
-  int i = 0;
+  int l = 0, cols, i;
   char *line = NULL;
   size_t len = 0;
   ssize_t read;
 
   while ((read = getline(&line, &len, fp)) != -1) {
-    i++;
+    l++;
+    cols = 0;
+    for (i=0; i<(int)read; i++)
+      if (line[i] == ',')
+        cols++;
     if (debug) {
-      fprintf (stderr, "Retrieved line of length %zu :\n", read);
+      fprintf (stderr, "Retrieved line of length %zu, with %d colons: \n", read, cols);
       fprintf (stderr, "%s", line);
     }
   }
+
+  /* postlude */
   if (debug)
-    fprintf (stderr, "%d lines read\n", i);
+    fprintf (stderr, "%d lines read\n", l);
 
   free (line);
 
@@ -117,4 +123,3 @@ note (code)
   fprintf (stderr, "Send comments, bugs, and all the fish to <joke@verizon.com>\n");
   exit (code);
 }
-
