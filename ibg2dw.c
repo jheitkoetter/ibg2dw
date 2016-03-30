@@ -1,5 +1,5 @@
 /*
- *  ibmi2dw(1) -- Copyright (c) 2016 Joerg Heitkoetter (joke). All rights reserved.
+ *  ibg2dw(1) -- Copyright (c) 2016 Joerg Heitkoetter (joke). All rights reserved.
  *
  *  Send bugs, comments, and all the fish to joke@verizon.com
  *
@@ -31,6 +31,9 @@ char *program_name = "ibmi2dw";
 char *program_version = "1.0";
 char *program_uri = "https://github.com/jheitkoetter/ibg2dw.git";
 
+int debug = 0;
+
+void
 main (argc, argv)
      int argc;
      char **argv;
@@ -38,15 +41,19 @@ main (argc, argv)
   FILE *fp;
   int c;
 
-  while ((c = getopt (argc, argv, "v")) != EOF)
+  while ((c = getopt (argc, argv, "vd")) != EOF)
     switch (c)
       {
+      case 'd':
+	debug++;
+	break;
+
       case 'v':
-	note (1);
+	note (EXIT_SUCCESS);
 	break;
 
       default:
-	usage (1);
+	usage (EXIT_FAILURE);
 	break;
       }
 
@@ -63,27 +70,36 @@ main (argc, argv)
 	csv2dw (fp, argv[optind]);
 	fclose (fp);
       }
-  return (0);
+
+  exit (EXIT_SUCCESS);
 }
 
+#define CR '\r'
+#define LF '\n'
+
+void
 csv2dw (fp, file)
      FILE *fp;
      char *file;
 {
-  int i = 0, c, peek;
+  int i = 0;
+  char *line = NULL;
+  size_t len = 0;
+  ssize_t read;
 
-  /* prelude */
-
-  /* interlude */
-  while ((c = getc (fp)) != EOF)
-    {
-      if ((peek = getc (fp)) == EOF)
-	{
-	}
-	
+  while ((read = getline(&line, &len, fp)) != -1) {
+    i++;
+    if (debug) {
+      fprintf (stderr, "Retrieved line of length %zu :\n", read);
+      fprintf (stderr, "%s", line);
     }
+  }
+  if (debug)
+    fprintf (stderr, "%d lines read\n", i);
 
-  /* postlude */
+  free (line);
+
+  exit (EXIT_SUCCESS);
 }
 
 usage (code)
@@ -101,3 +117,4 @@ note (code)
   fprintf (stderr, "Send comments, bugs, and all the fish to <joke@verizon.com>\n");
   exit (code);
 }
+

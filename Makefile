@@ -24,7 +24,7 @@ $(PRG):	$(PRG).o
 ######## demonstration ######################################################
 #
 $(DEMOS):	business_glossary_csv_sample.csv
-	./$(PRG) $(TEMPLATE) 
+	./$(PRG) -d $(TEMPLATE) 
 
 ######## packaging ###########################################################
 #
